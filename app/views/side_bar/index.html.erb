@@ -1,2 +1,20 @@
-<h1>SideBar#index</h1>
-<p>Find me in app/views/side_bar/index.html.erb</p>
+<h1 id="h1">Mazal Tov</h1>
+<script type="text/javascript">
+	var myElement = document.getElementById("h1");
+	window.setInterval(function(){
+		var h1 = document.getElementById("h1");
+		var color = Math.random()*10;
+  	if (color>7){
+      h1.style.color = "blue";
+      }
+  	else if (color>5){
+      h1.style.color = "red";
+      }
+  	else if (color>2){
+      h1.style.color = "yellow";
+      }
+  	else if (color>0){
+      h1.style.color = "green";
+      }
+	}, 500);
+</script>
