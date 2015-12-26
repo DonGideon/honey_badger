@@ -1,20 +1,28 @@
-<h1 id="h1">Mazal Tov</h1>
-<script type="text/javascript">
-	var myElement = document.getElementById("h1");
-	window.setInterval(function(){
-		var h1 = document.getElementById("h1");
-		var color = Math.random()*10;
-  	if (color>7){
-      h1.style.color = "blue";
-      }
-  	else if (color>5){
-      h1.style.color = "red";
-      }
-  	else if (color>2){
-      h1.style.color = "yellow";
-      }
-  	else if (color>0){
-      h1.style.color = "green";
-      }
-	}, 500);
-</script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css" />
+<script src="//cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<div id="side-bar-container" ng-app="sideBar">
+  <div id="side-bar" class="nav nav-stacked" ng-controller="TestsJsonController as testCntr">
+    <h3>
+      <span id="header-string">Reports {{testCntr.testsJson.length}}</span>
+      <span class="glyphicon glyphicon-remove" onclick="hideSideBar();"></span>
+      <span class="glyphicon glyphicon-repeat" ng-click="testCntr.getTests();"></span>
+    </h3>
+    <div id="ul-tests-wrapper">
+      <ul id="ul-tests">
+        <li class="li-test" ng-repeat="test in testCntr.testsJson">
+          <div class="column col-left">
+            <div class="column col-type">{{test.type}}</div>
+            <div class="column col-name">{{test.name}}</div>
+            <div>{{test.location}}</div>
+          </div>
+          <div class="column col-right">
+            <div>{{testCntr.getDate(test.updated)}}</div>
+            <div>{{testCntr.getTime(test.updated)}}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="side-bar-circle"><span class="glyphicon glyphicon-eye-open" onclick="showSideBar();"></span></div>
