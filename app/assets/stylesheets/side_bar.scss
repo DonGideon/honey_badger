@@ -1,5 +1,5 @@
 $light-grey-color: 						#f7f8f8;
-$dark-grey:  			 						#cccccc;
+$dark-grey-color:  			 			#cccccc;
 $sym-color:  			 						#c1c1c1;
 $scroll-bar-background-color: #fafafa;
 $blue-color: 			 						#85bfe6;
@@ -9,7 +9,12 @@ html, body{
 	height: 100%;
 }
 
+body{
+	background-color: yellow;
+}
+
 #side-bar-container{
+	background-color: #ffffff;
 	position: fixed;
 	right: 0;
 	bottom: 0;
@@ -17,20 +22,41 @@ html, body{
 	height: 100%;
 
 	h3{
-		padding: 10px 2px;
-		margin: 0;
 		color: $blue-color;
 		background-color: $light-grey-color;
 
-		.glyphicon{
-			color: $sym-color;
-			float: right;
-			font-size: 14px;
-			cursor: pointer;
+		#close-side-bar{
+			margin: 0 10px 0 15px;
+		}
+	}
+
+	.glyphicon{
+		color: $sym-color;
+		float: right;
+		font-size: 14px;
+		cursor: pointer;
+	}
+
+	.border-bottom-grey{
+		border-bottom: 1px solid $dark-grey-color;
+	}
+
+	.header-height{
+		padding: 10px 2px;
+		margin: 0;
+		height: 46px;
+	}
+
+	#search-sort{
+		#search-box input{
+			margin-top: 2px;
+			border: none;
+			outline: none;
 		}
 
-		.glyphicon-remove{
-			margin: 0 10px 0 15px;
+		#sort-tests{
+			margin-top: 4px;
+			margin-right: 10px;
 		}
 	}
 
@@ -42,12 +68,14 @@ html, body{
 	}
 
 	#ul-tests{
-		padding-left: 30px;
+		padding-left: 0;
 		list-style-type: none;
 	}
 
 	.li-test{
 		height: 53px;
+		padding-left: 30px;
+		padding-top: 8px;
 
 		.column{
 			display: inline-block;
@@ -66,12 +94,16 @@ html, body{
 				overflow: hidden;
 			}
 
-			.col-type{
+			.test-type{
 				width: 35px;
 			}
 
-			.col-name{
+			.test-name{
 				width: 110px;
+			}
+
+			.test-location{
+				color: $dark-grey-color;
 			}
 		}
 
@@ -80,6 +112,10 @@ html, body{
 			height: 100%;
 			width: 50px;
 			font-size: 11px;
+
+			#test-time{
+				margin-top: 6px;
+			}
 		}
 	}
 }

@@ -3,22 +3,26 @@
 
 <div id="side-bar-container" ng-app="sideBar">
   <div id="side-bar" class="nav nav-stacked" ng-controller="TestsJsonController as testCntr">
-    <h3>
+    <h3 class="header-height">
       <span id="header-string">Reports {{testCntr.testsJson.length}}</span>
-      <span class="glyphicon glyphicon-remove" onclick="hideSideBar();"></span>
+      <span id="close-side-bar" class="glyphicon glyphicon-remove" onclick="hideSideBar();"></span>
       <span class="glyphicon glyphicon-repeat" ng-click="testCntr.getTests();"></span>
     </h3>
+    <div id="search-sort" class="header-height border-bottom-grey">
+      <span id="search-box"><input type="text" placeHolder="search report"/></span>
+      <span id="sort-tests" class="glyphicon glyphicon-resize-vertical" ng-click="testCntr.filterSwitch();"></span>
+    </div>
     <div id="ul-tests-wrapper">
       <ul id="ul-tests">
-        <li class="li-test" ng-repeat="test in testCntr.testsJson">
+        <li class="li-test border-bottom-grey" ng-repeat="test in testCntr.testsJson | orderBy:testCntr.filterBy">
           <div class="column col-left">
-            <div class="column col-type">{{test.type}}</div>
-            <div class="column col-name">{{test.name}}</div>
-            <div>{{test.location}}</div>
+            <div class="column test-type">{{test.type}}</div>
+            <div class="column test-name">{{test.name}}</div>
+            <div class="test-location">{{test.location}}</div>
           </div>
           <div class="column col-right">
-            <div>{{testCntr.getDate(test.updated)}}</div>
-            <div>{{testCntr.getTime(test.updated)}}</div>
+            <div id="test-date">{{testCntr.getDate(test.updated)}}</div>
+            <div id="test-time">{{testCntr.getTime(test.updated)}}</div>
           </div>
         </li>
       </ul>

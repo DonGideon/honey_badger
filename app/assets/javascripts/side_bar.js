@@ -3,6 +3,11 @@ var app = angular.module("sideBar",[]);
 	
 app.controller("TestsJsonController", ["$http", function($http){
 	var testJasonCntr = this;
+	this.filterBy = '-updated';
+	this.filterSwitch = function(){
+		this.filterBy = (this.filterBy[0] == '-'? this.filterBy.substr(1) : ('-' + this.filterBy));
+	}
+
 	this.testsJson = [];
 	this.getTests = function(){
 		$http.get("/side_bar/test_json").success(function(data){
