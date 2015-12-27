@@ -5,12 +5,12 @@
   <div id="side-bar" class="nav nav-stacked" ng-controller="TestsJsonController as testCntr">
     <h3 class="header-height">
       <span id="header-string">Reports {{testCntr.testsJson.length}}</span>
-      <span id="close-side-bar" class="glyphicon glyphicon-remove" onclick="hideSideBar();" title="Close"></span>
-      <span class="glyphicon glyphicon-repeat" ng-click="testCntr.getTests();" title="Bring it on"></span>
+      <span id="close-side-bar" class="glyphicon glyphicon-remove" onclick="hideSideBar();" title="Close">X</span>
+      <span class="glyphicon glyphicon-repeat" ng-click="testCntr.getTests();" title="Bring it on">R</span>
     </h3>
     <div id="search-sort" class="header-height border-bottom-grey">
       <span id="search-box"><input type="text" placeHolder="search report"/></span>
-      <span id="sort-tests" class="glyphicon glyphicon-resize-vertical" ng-click="testCntr.filterSwitch();" title="Sort"></span>
+      <span id="sort-tests" class="glyphicon glyphicon-resize-vertical" ng-click="testCntr.filterSwitch();" title="Sort">S</span>
     </div>
     <div id="ul-tests-wrapper">
       <ul id="ul-tests">
