@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get 'side_bar' => 'side_bar#index'
   get 'side_bar/test_json' => 'side_bar#test_json'
 
+  get 'twitter/auth' => 'twitter#auth'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
