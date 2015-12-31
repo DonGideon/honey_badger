@@ -1,3 +1,22 @@
-// Place all the styles related to the twitter controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
+	background-color: red;
+}
+
+a, a:hover, a:focus{
+	color: red;
+}
+
+
+.btn-red{
+	background-color: red;
+	color: white;
+	outline: none;
+
+	&:hover, &:focus{
+		color: white;
+	}
+}
+
+#tweets-list{
+	margin-top: 10px;
+}

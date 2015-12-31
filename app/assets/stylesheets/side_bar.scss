@@ -9,10 +9,6 @@ html, body{
 	height: 100%;
 }
 
-body{
-	background-color: yellow;
-}
-
 #side-bar-container{
 	background-color: #ffffff;
 	position: fixed;
@@ -134,26 +130,4 @@ body{
 	cursor: pointer;
 }
 
-
-/* ScrollBar */
-
-.mCustomScrollBox.mCS-scroll-bar-theme.mCSB_vertical.mCSB_inside #mCSB_1_container{
-	margin-right: 15px;
-}
-
-.mCS-scroll-bar-theme.mCSB_scrollTools #mCSB_1_dragger_vertical{ 
-	background-color: $sym-color;
-	border-radius: 10px;
-
-	.mCSB_dragger_bar{
-		background-color: $sym-color;
-	}
-}
-.mCS-scroll-bar-theme.mCSB_scrollTools .mCSB_draggerContainer{ 
-	background-color: $scroll-bar-background-color;
-
-	.mCSB_draggerRail{
-		background-color: $scroll-bar-background-color;
-	}
-}
 

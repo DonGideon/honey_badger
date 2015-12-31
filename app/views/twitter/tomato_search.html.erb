@@ -1,0 +1,19 @@
+<div class="container" ng-app="twitter" ng-controller="TwitterController as twitterCtrl">
+
+	<ul class="nav nav-pills">
+	  <li role="presentation" ng-class="{'active':twitterCtrl.isTab(0)}" ng-click="twitterCtrl.setTab(0)"><a href="#">Search</a></li>
+	  <li role="presentation" ng-class="{'active':twitterCtrl.isTab(1)}" ng-click="twitterCtrl.setTab(1)"><a href="#">History</a></li>
+	</ul>
+  <div class="text-center">
+    <h1>Tomayto Tomahto</h1>
+  </div>
+
+  <div id="search-twitts" ng-show="twitterCtrl.isTab(0)">
+  	<%= render "search_tweets"%>
+  </div>
+
+  <div id="history" ng-show="twitterCtrl.isTab(1)">
+  	<%= render "history"%>
+  </div>
+
+</div>

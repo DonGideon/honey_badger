@@ -41,12 +41,3 @@ function showSideBar(){
 	$("#side-bar-container").slideDown();
 	$("#side-bar-circle").slideUp();
 }
-
-// scrollBar
-(function($){
-    $(window).load(function(){
-        $("#ul-tests-wrapper").mCustomScrollbar({
-		    theme:"scroll-bar-theme"
-		});
-	});
-})(jQuery);

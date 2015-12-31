@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   get 'side_bar/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'twitter#sign_in'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -14,6 +16,8 @@ Rails.application.routes.draw do
   get 'side_bar/test_json' => 'side_bar#test_json'
 
   get 'twitter/auth' => 'twitter#auth'
+  get 'twitter/tomato' => 'twitter#tomato_search'
+  get 'twitter/search_tweets' => 'twitter#search_tweets'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
