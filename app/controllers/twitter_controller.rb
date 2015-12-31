@@ -1,6 +1,6 @@
 class TwitterController < ApplicationController
 	require 'rest_client'
-	before_filter :authenticate_user!, except: [:sign_in]
+	before_filter :user_log_in?, except: [:sign_in]
 	def auth
 
     key = URI::encode('utixerhF1EVbxPhkp37Umlew7')
@@ -27,9 +27,6 @@ class TwitterController < ApplicationController
     a = res.get(options)
 
     render :json => (a)
-	end
-
-	def sign_in
 	end
 
 	def tomato_search
@@ -64,4 +61,11 @@ class TwitterController < ApplicationController
 
     render :json => JSON.parse(a)["statuses"]
 	end
+
+	private
+		def user_log_in?
+			unless cookies[:twitter_user_id] && User.find_by(id: cookies[:twitter_user_id])
+				redirect_to users_sign_in_path
+			end
+		end
 end

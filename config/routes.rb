@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
 
   get 'side_bar/index'
 
@@ -7,7 +6,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'twitter#sign_in'
+  root 'twitter#search_tweets'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -18,6 +17,8 @@ Rails.application.routes.draw do
   get 'twitter/auth' => 'twitter#auth'
   get 'twitter/tomato' => 'twitter#tomato_search'
   get 'twitter/search_tweets' => 'twitter#search_tweets'
+  get 'users/sign_in' => 'users#sign_in'
+  post 'users/can_create' => 'users#can_create'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

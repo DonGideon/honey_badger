@@ -1,0 +1,11 @@
+<div id="sign-in-container" class="container" ng-app="users" ng-controller="UsersController as usersCtrl">
+	<div class="jumbotron text-center">
+	  <h1>Sign in OR Log in</h1>
+	  
+		<form name="nameForm" class="form-inline" ng-submit="nameForm.$valid && usersCtrl.checkAndRedirect(name)" novalidate>
+			<input name="nameInput" type="text" ng-model="name" class="form-control" required/>
+			<input type="submit" class="btn btn-red btn-lg"/>
+			<div class="invalid-user-name" ng-show="!nameForm.$valid && nameForm.$submitted">invalid user name</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+#sign-in-container{
+	.ng-submitted .ng-invalid{
+		background-color: red;
+
+		&:focus{
+			background-color: red;
+		}
+	}
+
+	.invalid-user-name{
+		color: red;
+		font-size: 12px;
+	}
+}

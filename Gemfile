@@ -50,5 +50,3 @@ gem 'pg'
 gem "twitter-bootstrap-rails"
 
 gem 'rest-client'
-
-gem 'devise'
