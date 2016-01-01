@@ -20,3 +20,13 @@ a, a:hover, a:focus{
 #tweets-list{
 	margin-top: 10px;
 }
+
+.history-list-container {
+	float: left;
+	width: 50%;
+
+	.history-list{
+		font-size: 10px;
+		max-height: 890px;
+	}
+}

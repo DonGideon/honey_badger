@@ -1,0 +1,11 @@
+<div class="text-center">
+	<h4>your history</h4>
+	<div class="history-list-container" ng-repeat="search in twitterCtrl.search_history | orderBy:'-'">
+		<h5>{{twitterCtrl.getDate(search["created_at"]) | date:'dd/MM/yyyy H:mm'}}</h5>
+		<ul class="history-list" class="list-group">
+		  <li class="list-group-item" ng-repeat="tweet in search['tweets']">
+		  	<%= render "tweet_li" %>
+		  </li>
+		</ul>
+	</div>
+</div>

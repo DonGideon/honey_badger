@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'side_bar/index'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'twitter#search_tweets'
+  root 'twitter#tomato_search'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -14,11 +12,13 @@ Rails.application.routes.draw do
   get 'side_bar' => 'side_bar#index'
   get 'side_bar/test_json' => 'side_bar#test_json'
 
-  get 'twitter/auth' => 'twitter#auth'
   get 'twitter/tomato' => 'twitter#tomato_search'
   get 'twitter/search_tweets' => 'twitter#search_tweets'
+  get 'twitter/history' => 'twitter#history'
+
   get 'users/sign_in' => 'users#sign_in'
   post 'users/can_create' => 'users#can_create'
+  get 'users/log_out' => 'users#log_out'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

@@ -1,6 +1,9 @@
 <div class="text-center">
+	<h4>search for Tomato on twitter</h4>
 	<button type="button" class="btn btn-red btn-lg" ng-click="twitterCtrl.searchTweets()">Search</button>
 	<ul id="tweets-list" class="list-group">
-	  <li class="list-group-item" ng-repeat="tweet in twitterCtrl.tweets">{{tweet["text"]}}</li>
+	  <li class="list-group-item" ng-repeat="tweet in twitterCtrl.tweets">
+	  	<%= render "tweet_li" %>
+	  </li>
 	</ul>
 </div>
