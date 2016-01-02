@@ -1,43 +1,45 @@
-.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
-	background-color: red;
-}
-
-a, a:hover, a:focus{
-	color: red;
-}
-
-
-.btn-red{
-	background-color: red;
-	color: white;
-	outline: none;
-
-	&:hover, &:focus{
-		color: white;
+.twitter-app{
+	.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
+		background-color: red;
 	}
-}
 
-#main-header{
-	color: red;
-	margin-bottom: 20px;
-	display: inline-block;
-}
+	a, a:hover, a:focus{
+		color: red;
+	}
 
-.img-ajax{
-	display: inline-block;
-	margin: 0 10px 10px 10px;
-}
 
-#tweets-list{
-	margin-top: 10px;
-}
+	.btn-red{
+		background-color: red;
+		color: white;
+		outline: none;
 
-.history-list-container {
-	float: left;
-	width: 50%;
+		&:hover, &:focus{
+			color: white;
+		}
+	}
 
-	.history-list{
-		font-size: 10px;
-		max-height: 890px;
+	#main-header{
+		color: red;
+		margin-bottom: 20px;
+		display: inline-block;
+	}
+
+	.img-ajax{
+		display: inline-block;
+		margin: 0 10px 10px 10px;
+	}
+
+	#tweets-list{
+		margin-top: 10px;
+	}
+
+	.history-list-container {
+		float: left;
+		width: 50%;
+
+		.history-list{
+			font-size: 10px;
+			max-height: 890px;
+		}
 	}
 }

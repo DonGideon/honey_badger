@@ -1,10 +1,11 @@
-<div class="container" ng-app="twitter" ng-controller="TwitterController as twitterCtrl">
-
+<div id="tomato-search-container" class="container twitter-app" ng-app="twitter" ng-controller="TwitterController as twitterCtrl">
+  
 	<ul class="nav nav-pills">
 	  <li role="presentation" ng-class="{'active':twitterCtrl.isTab(0)}" ng-click="twitterCtrl.setTab(0)"><a href="#">Search</a></li>
 	  <li role="presentation" ng-class="{'active':twitterCtrl.isTab(1)}" ng-click="twitterCtrl.setTab(1); twitterCtrl.getHistory();"><a href="#">History</a></li>
 	  <li role="presentation" class="pull-right"><%= link_to @user.name + " - log out", users_log_out_url %></li>
 	</ul>
+
   <div class="text-center">
     <image-loading-ajax></image-loading-ajax>
     <h1 id="main-header">Tomayto Tomahto</h1>
@@ -18,5 +19,4 @@
   <div id="history" ng-show="twitterCtrl.isTab(1)">
   	<%= render "history"%>
   </div>
-
 </div>
