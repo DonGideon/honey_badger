@@ -3,7 +3,7 @@
 	  <h1>Sign in OR Log in</h1>
 	  
 		<form name="nameForm" class="form-inline" ng-submit="nameForm.$valid && usersCtrl.checkAndRedirect(name)" novalidate>
-			<input name="nameInput" type="text" ng-model="name" class="form-control" required/>
+			<input name="nameInput" type="text" ng-model="name" class="form-control" placeholder="User Name" required/>
 			<input type="submit" class="btn btn-red btn-lg"/>
 			<div class="invalid-user-name" ng-show="!nameForm.$valid && nameForm.$submitted">invalid user name</div>
 		</form>

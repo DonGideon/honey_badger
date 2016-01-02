@@ -11,8 +11,8 @@ class TwitterController < ApplicationController
 	end
 
 	def search_tweets
-		key = URI::encode('utixerhF1EVbxPhkp37Umlew7')
-    secret = URI::encode('6VdsCafZffZJcfBeCRvCGMIWxRWyMmgqeYofgoIVGtfYK260FP')
+		key = URI::encode(ENV["TWITTER_HONEY_BADGER_KEY"])
+    secret = URI::encode(ENV["TWITTER_HONEY_BADGER_SECRET"])
     encoded = Base64.strict_encode64("#{key}:#{secret}")
 
     res = RestClient::Resource.new "https://api.twitter.com/oauth2/token/"
