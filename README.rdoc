@@ -1,6 +1,6 @@
 == README ==
 
-Wanna search for "Tomato" on twitter (without given any premissions to your account)? wanna check out what your previos searches got you? wanna sign in only base on a user name of your choice (not even a password needed)? This is the app for you!
+Wanna search for "Tomato" on twitter (without given any permissions to your account)? wanna check out what your previous searches got you? wanna sign in only base on a user name of your choice (not even a password needed)? This is the app for you!
 alot of front-end stuff and some Rails magic!
 
 Used:
