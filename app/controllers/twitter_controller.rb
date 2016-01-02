@@ -1,5 +1,5 @@
 class TwitterController < ApplicationController
-	require 'rest_client'
+	include TwitterApiCalls
 	before_filter :user_redirect?, only: [:tomato_search]
 	before_filter :user_ajax?, only: [:search_tweets, :history]
 
@@ -7,36 +7,11 @@ class TwitterController < ApplicationController
 	end
 
 	def history
-		render :json => @user.searches.inject([]){|arr, search| h = {}; h[:created_at] = search.created_at; h[:tweets] = search.tweets.first(10); arr << h; arr}
+		render :json => @user.serches_history
 	end
 
 	def search_tweets
-		key = URI::encode(ENV["TWITTER_HONEY_BADGER_KEY"])
-    secret = URI::encode(ENV["TWITTER_HONEY_BADGER_SECRET"])
-    encoded = Base64.strict_encode64("#{key}:#{secret}")
-
-    res = RestClient::Resource.new "https://api.twitter.com/oauth2/token/"
-    response = ''
-
-    options = {}
-    options['Authorization'] = "Basic #{encoded}"
-    options['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
-
-    a = res.post('grant_type=client_credentials', options)
-
-    token = JSON.parse(a)["access_token"]
-
-    res = RestClient::Resource.new URI.escape("https://api.twitter.com/1.1/search/tweets.json?q=tomato&lang=en")
-    response = ''
-
-    options = {}
-    options['Authorization'] = "Bearer #{token}"
-
-    a = res.get(options)
-
-    keys = %w{created_at text}
-    user_keys = %w{profile_image_url_https name screen_name}
-    tweets_arr = JSON.parse(a)["statuses"].inject([]){|arr, h| arr << (h.select{|k,v| keys.include? k}).merge(h["user"].select{|kk,vv| user_keys.include? kk}); arr}
+    tweets_arr = search_call("tomato")
     search = Search.create(user: @user)
     tweets_arr.each do |tweet|
     	Tweet.create(
@@ -53,15 +28,11 @@ class TwitterController < ApplicationController
 
 	private
 		def user_redirect?
-			unless user_cookie?
-				redirect_to users_sign_in_path
-			end
+			redirect_to users_sign_in_path unless user_cookie?
 		end
 
 		def user_ajax?
-			unless user_cookie?
-				render :json => {error: "not sign in", url: users_sign_in_url}
-			end
+			render :json => {error: "not sign in", url: users_sign_in_url} unless user_cookie?
 		end
 
 		def user_cookie?
