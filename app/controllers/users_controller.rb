@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 	def can_create
 		name =  params["name"]
 		success = false 
-		if name
+		if name # no other restriction than have a name
 			user = User.find_or_create_by(name: params["name"])
 			cookies[:twitter_user_id] = user.id
 			success = true
