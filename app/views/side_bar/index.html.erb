@@ -17,7 +17,7 @@ such color, much banana, so yellow, wow
         <li class="li-test border-bottom-grey" ng-repeat="test in testCntr.testsJson | orderBy:testCntr.filterBy">
           <div class="column col-left">
             <div class="column test-type">{{test.type}}</div>
-            <div class="column test-name">{{test.name}}</div>
+            <div class="column test-name" title="{{test.name}}">{{test.name}}</div>
             <div class="test-location">{{test.location}}</div>
           </div>
           <div class="column col-right">
