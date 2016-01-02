@@ -1,28 +1,14 @@
-== README
+== README ==
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Wanna search for "Tomato" on twitter (without given any premissions to your account)? wanna check out what your previos searches got you? wanna sign in only base on a user name of your choice (not even a password needed)? This is the app for you!
+alot of front-end stuff and some Rails magic!
 
-Things you may want to cover:
+Used:
 
-* Ruby version
+* AngularJs
 
-* System dependencies
+* Bootstrap
 
-* Configuration
+* Jquery...css...html
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+** (also a side_bar mini-project.... front-end stuff)
